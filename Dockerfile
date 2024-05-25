@@ -13,6 +13,8 @@ RUN npm install
 # Install Tex Live for LaTeX compilation
 RUN apt-get update && \
     apt-get install -y texlive-full && \
+    which pdflatex && \
+    pdflatex --version && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy the rest of the application code
