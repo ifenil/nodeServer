@@ -1,0 +1,18 @@
+{
+    "name": "resume-genie",
+    "version": "1.0.0",
+    "description": "Resume generation service using LaTeX",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "body-parser": "^1.19.0",
+      "express": "^4.17.1",
+      "fs": "0.0.1-security",
+      "uuid": "^8.3.2"
+    },
+    "author": "Your Name",
+    "license": "ISC"
+  }
+  
