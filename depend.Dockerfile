@@ -4,18 +4,19 @@ FROM node:14
 # Set the working directory
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Copy package.json and yarn.lock
+COPY package*.json yarn.lock ./
 
-# Install the project dependencies
-RUN npm install
+# Install project dependencies
+RUN yarn install
 
 # Copy the rest of the application code
 COPY . .
 
-# Install TeX Live for LaTeX compilation
+# Install Tex Live for LaTeX compilation
 RUN apt-get update && \
-    apt-get install -y texlive-full && \
+    apt-get install -y texlive && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Expose the port the app runs on
