@@ -25,7 +25,7 @@ app.post('/convert', (req, res) => {
     fs.writeFileSync(texFile, latexContent);
 
     // Compile LaTeX to PDF using pdflatex
-    const command = `/usr/bin/pdflatex -interaction=nonstopmode -halt-on-error ${texFile}`;
+    const command = `/usr/local/texlive/bin/pdflatex -interaction=nonstopmode -halt-on-error ${texFile}`;
 
     const child = exec(command, (error, stdout, stderr) => {
         if (error) {
